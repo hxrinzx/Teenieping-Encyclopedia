@@ -1,0 +1,14 @@
+{
+  "name": "teenieping-encyclopedia",
+  "version": "1.0.0",
+  "description": "Teenieping Encyclopedia Project",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "cross-env": "^7.0.3"
+  }
+}

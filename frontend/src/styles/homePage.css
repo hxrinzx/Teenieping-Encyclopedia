@@ -1,0 +1,95 @@
+@keyframes effectFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes heartspingFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 캐릭터 보기 버튼 등장 애니메이션 */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-page {
+  text-align: center;
+  height: 100vh;
+  background-image: url("./images//emotioncastle.png") !important; /* 배경 이미지 경로 */
+  background-size: cover !important; /* 이미지를 페이지에 꽉 채움 */
+  background-position: center !important; /* 이미지를 가운데 정렬 */
+  background-repeat: no-repeat !important; /* 배경 이미지 반복 안함 */
+}
+
+.effect {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  opacity: 0;
+  width: 400px;
+  height: auto;
+  transform: translate(-50%, -50%);
+  animation: effectFadeIn 1s ease-in-out forwards 0.2s; /* 별똥별이 사라진 후 등장 */
+}
+
+/* 하츄핑 스타일 */
+.heartsping {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  opacity: 0;
+  width: 400px;
+  height: auto;
+  animation: heartspingFadeIn 1.5s ease-in-out forwards 0.3s; /* 별똥별이 끝난 뒤 등장 */
+}
+/* 버튼 스타일 */
+.see-characters-btn {
+  opacity: 0;
+  position: absolute;
+  top: 65%;
+  left: 45%;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  animation: heartspingFadeIn 1s ease-in-out forwards 0.8s;
+}
+.speech-bubble {
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: absolute;
+  top: 25%;
+  left: 60%;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 15px;
+  width: 300px;
+  z-index: 10;
+  animation: heartspingFadeIn 1.5s ease-in-out forwards 0.3s;
+  line-height: 200%;
+}
