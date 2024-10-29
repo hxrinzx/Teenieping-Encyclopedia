@@ -18,6 +18,7 @@ const CharacterList = () => {
     axios
       .get(`${process.env.REACT_APP_API_URL}/api/characters`)
       .then((response) => {
+        const sortedCharacters = response.data.sort((a, b) => a.id - b.id);
         setCharacters(response.data); // 데이터를 상태에 저장
       })
       .catch((error) => {
