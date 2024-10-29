@@ -32,6 +32,22 @@ mongoose.connect(process.env.MONGO_URL, {
     .then(() => console.log('MongoDB 연결 성공'))
     .catch(err => console.error('MongoDB 연결 실패:', err));
 
+const net = require('net');
+
+const testConnection = () => {
+    const client = new net.Socket();
+    client.connect(27017, 'cluster0-shard-00-00.wlw0c.mongodb.net', () => {
+        console.log('MongoDB 포트에 연결 성공!');
+        client.destroy();
+    });
+
+    client.on('error', (err) => {
+        console.error('MongoDB 포트 접근 불가:', err.message);
+    });
+};
+
+testConnection();
+
 // 서버 실행
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
