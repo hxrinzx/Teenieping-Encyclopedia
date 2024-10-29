@@ -25,7 +25,10 @@ app.use('/api', characterRoutes);
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
 // MongoDB 연결
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect(process.env.MONGO_URL, {
+    connectTimeoutMS: 30000, // 타임아웃을 30초로 설정
+    socketTimeoutMS: 30000   // 소켓 타임아웃 30초로 설정
+})
     .then(() => console.log('MongoDB 연결 성공'))
     .catch(err => console.error('MongoDB 연결 실패:', err));
 
