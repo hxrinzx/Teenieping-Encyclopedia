@@ -25,7 +25,7 @@ app.use('/api', characterRoutes);
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
 // MongoDB 연결
-mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URL)
     .then(() => console.log('MongoDB 연결 성공'))
     .catch(err => console.error('MongoDB 연결 실패:', err));
 
