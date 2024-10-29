@@ -19,7 +19,7 @@ const CharacterList = () => {
       .get(`${process.env.REACT_APP_API_URL}/api/characters`)
       .then((response) => {
         const sortedCharacters = response.data.sort((a, b) => a.id - b.id);
-        setCharacters(response.data); // 데이터를 상태에 저장
+        setCharacters(sortedCharacters);
       })
       .catch((error) => {
         console.error("데이터 가져오기 실패:", error);
@@ -70,7 +70,7 @@ const CharacterList = () => {
               onClick={() => handleCharacterClick(character)} // 캐릭터 클릭 시 모달 열기
             >
               <img
-                src={`http://localhost:3002${character.image}`}
+                src={`${process.env.REACT_APP_API_URL}${character.image}`}
                 alt={character.name}
               />
             </div>
