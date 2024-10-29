@@ -13,12 +13,10 @@ const CharacterList = () => {
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 상태
   const charactersPerPage = 12; // 한 페이지에 표시할 캐릭터 수
 
-  const API_URL = process.env.REACT_APP_API_URL;
-
   useEffect(() => {
     // 캐릭터 데이터를 가져오는 API 호출
     axios
-      .get(`${API_URL}/api/characters`)
+      .get(`${process.env.REACT_APP_API_URL}/api/characters`)
       .then((response) => {
         setCharacters(response.data); // 데이터를 상태에 저장
       })
