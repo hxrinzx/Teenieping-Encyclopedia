@@ -12,9 +12,9 @@ app.use(express.json());
 
 // CORS 설정
 app.use(cors({
-    origin: 'http://localhost:3000', // 프론트엔드 도메인 명시
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // 허용할 HTTP 메서드
-    credentials: true // 인증 정보가 있는 요청 허용
+    origin: ['http://localhost:3000', 'https://teenieping-encyclopedia.vercel.app'], // 로컬과 Vercel 도메인 둘 다 허용
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
 }));
 
 // 라우트 불러오기
