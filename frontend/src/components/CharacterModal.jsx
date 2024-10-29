@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/CharacterModal.css"; // 모달 스타일
-
+const API_URL = process.env.REACT_APP_API_URL;
 const CharacterModal = ({ show, character, onClose }) => {
   if (!show) {
     return null;
@@ -12,10 +12,7 @@ const CharacterModal = ({ show, character, onClose }) => {
         <button className="modal-close" onClick={onClose}>
           X
         </button>
-        <img
-          src={`http://localhost:3002${character.image}`}
-          alt={character.name}
-        />
+        <img src={`${API_URL}${character.image}`} alt={character.name} />
         <h2>{character.name}</h2>
         <p>{character.characteristic}</p>
         <p>소품: {character.signature}</p>
